@@ -1,0 +1,357 @@
+/* =========================================
+   ESTILOS GLOBALES Y MARCA
+   ========================================= */
+:root {
+    --verde-topo: #99cc33;
+    --negro-topo: #000000;
+    --gris-oscuro: #1a1a1a;
+    --blanco: #ffffff;
+    --claro: #f8f9fa;
+    --texto: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    /* Fuente más ruda para llantas */
+}
+
+body {
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================
+   HEADER Y NAVEGACIÓN
+   ========================================= */
+header {
+    background: var(--negro-topo);
+    border-bottom: 4px solid var(--verde-topo);
+    padding: 0.5rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    /* Tamaño ideal para el escudo de El Topo */
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-left: 25px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--verde-topo);
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--blanco);
+    padding: 0 5%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    border-left: 10px solid var(--verde-topo);
+    padding-left: 20px;
+    margin-bottom: 1rem;
+}
+
+.btn-cta {
+    display: inline-block;
+    background: var(--verde-topo);
+    color: var(--negro-topo);
+    padding: 1.2rem 2.5rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background: var(--blanco);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   SECCIONES GENERALES (Títulos)
+   ========================================= */
+section {
+    padding: 80px 10%;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: var(--negro-topo);
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: var(--verde-topo);
+    margin: 10px auto;
+}
+
+/* =========================================
+   CATÁLOGO (Grid de Productos)
+   ========================================= */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--claro);
+    border: 2px solid #eee;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    border-color: var(--verde-topo);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: block;
+    margin-top: 15px;
+    color: var(--verde-topo);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   MARCAS Y CLIENTES
+   ========================================= */
+.brands-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.brands-grid img {
+    height: 60px;
+    filter: grayscale(1);
+    opacity: 0.6;
+}
+
+.testimonials {
+    background: var(--gris-oscuro);
+    color: var(--blanco);
+}
+
+.testimonials h2 {
+    color: var(--blanco);
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-item {
+    background: #222;
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 4px solid var(--verde-topo);
+}
+
+/* Contenedor de cada testimonio */
+.testimonial-card,
+.testimonial-item {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border-top: 4px solid var(--verde-topo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra el contenido */
+    text-align: center;
+}
+
+/* Tamaño fijo para las fotos de clientes */
+.testimonial-card img,
+.testimonial-item img {
+    width: 100%;
+    /* Ocupa el ancho del contenedor */
+    height: 350px;
+    /* ALTURA FIJA: Ajusta este valor a tu gusto */
+    object-fit: cover;
+    /* Mantiene la proporción recortando los bordes excedentes */
+    object-position: center;
+    /* Centra la imagen en el recorte */
+    border-radius: 8px;
+    /* Bordes suavizados */
+    margin-bottom: 15px;
+    border: 2px solid #333;
+}
+
+/* Ajuste del texto del testimonio */
+.testimonial-card p,
+.testimonial-item p {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    color: #ccc;
+    font-style: italic;
+    margin-top: auto;
+    /* Empuja el texto hacia abajo si la foto es más pequeña */
+}
+
+/* Estilos para los Badges del Hero */
+.badges {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.badges span {
+    background: rgba(153, 204, 51, 0.2);
+    border: 1px solid var(--verde-topo);
+    color: var(--verde-topo);
+    padding: 8px 15px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Sección Nosotros / About */
+.about {
+    background: var(--claro);
+    text-align: center;
+}
+
+.main-text {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+    /* Texto de lectura más cómodo */
+}
+
+.info-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.info-item .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.btn-nav {
+    background: var(--verde-topo);
+    color: var(--negro-topo) !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.tag {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--verde-topo);
+    font-weight: bold;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background: var(--negro-topo);
+    color: var(--blanco);
+    text-align: center;
+    padding: 40px;
+    border-top: 5px solid var(--verde-topo);
+}
+
+/* =========================================
+   RESPONSIVE (Celulares)
+   ========================================= */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    /* Aquí podrías poner un menú móvil */
+    .logo img {
+        height: 60px;
+    }
+}
