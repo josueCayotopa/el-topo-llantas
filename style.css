@@ -327,15 +327,60 @@ h2::after {
     font-weight: bold;
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
 footer {
     background: var(--negro-topo);
     color: var(--blanco);
-    text-align: center;
-    padding: 40px;
+    padding: 50px 10% 20px;
     border-top: 5px solid var(--verde-topo);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: var(--verde-topo);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-section p {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.payment-icons {
+    margin-top: 10px;
+    color: var(--verde-topo);
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .footer-container {
+        text-align: center;
+    }
 }
 
 /* =========================================
